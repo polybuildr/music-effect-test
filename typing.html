@@ -2,12 +2,27 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>MCQs</title>
+        <title>Typing test</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div id="app">
-            <div id="sentence" v-html="sentenceHtml"></div>
-            <textarea v-model="typedText" v-on:input="checkTypedTextState"></textarea>
+        <div id="page">
+            <div id="instructions" v-if="!showApp">
+                <h1>Typing test</h1>
+                <ul>
+                    <li>You will be presented with a paragraph and a box below it to type in.</li>
+                    <li>You must type the given paragraph <strong>correctly</strong> as fast as possible in the box below.</li>
+                    <li>A timer will appear below the box to show how long you are taking.</li>
+                    <li>Once you click the OK button, the test will load and the timer will have begun. You can start typing immediately.</li>
+                </ul>
+                <div class="text-center large"><button v-on:click="toggleToApp()">Okay, start!</button></div>
+            </div>
+            <div id="app" v-if="showApp">
+                <div id="paragraph" v-html="paragraphHtml"></div>
+                <textarea id="textarea" v-model="typedText" v-on:input="checkTypedTextState" v-bind:disabled="done"></textarea>
+                <div id="timer">{{elapsedSeconds.toFixed(1)}} seconds<span v-if="done">!</span></div>
+                <div v-if="showCountdownInterval">Next test in {{secondsLeftForNextParagraph}} seconds...</div>
+            </div>
         </div>
         <script src="bower_components/vue/dist/vue.js"></script>
         <script src="js/typing.js"></script>

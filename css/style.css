@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    font-size: 22px;
+    font-family: Arial, serif;
+    color: #222;
+    background-color: #f8f8f8;
+    width: 90%;
+    margin: 1em auto;
+}
+
+button {
+    font-size: inherit;
+}
+
+#app {
+    font-size: 1.7em;
+    line-height: 1.4em;
+}
+
+#timer {
+    float: right;
+}
+
+#paragraph {
+    margin-bottom: .5em;
+}
+
+#timer {
+    color: #333;
+}
+
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    display: block;
+    background-color: #fefefe;
+    box-shadow: 0 0 2px #333;
+    height: 6em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid #999;
+    border-radius: 1px;
+    outline: 0;
+    padding: .4em 1em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #666;
+}
+
+button:hover {
+    border-color: #111;
+    color: #333;
+}
+
+.large button {
+    font-size: 1.2em;
+}
+
+ul li {
+    line-height: 1.4em;
+}
