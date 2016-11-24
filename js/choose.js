@@ -13,7 +13,8 @@ var questions = [
     },
 ];
 
-Mousetrap.bind('enter', function () {
+Mousetrap.bind('enter', function (e) {
+    e.preventDefault();
     typingApp.toggleToApp();
     Mousetrap.unbind('enter');
 });
@@ -36,16 +37,18 @@ var typingApp = new Vue({
             this.start();
         },
         start: function () {
+            state.startTask('choose');
             this.elapsedSeconds = 0;
             var that = this;
             this.typingInterval = setInterval(function () {
                 that.elapsedSeconds += 0.1;
             }, 100);
-            Vue.nextTick(function () {
-                document.getElementById('answer').focus();
-            });
         },
         questionDone: function () {
+            var question = this.question;
+            state.finishTask({
+                correct: this.picked == question.options[question.answerChoice]
+            });
             clearInterval(this.typingInterval);
             this.typingInterval = null;
             if (questions.length == 0) {

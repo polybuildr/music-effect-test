@@ -13,7 +13,8 @@ var questions = [
     },
 ];
 
-Mousetrap.bind('enter', function () {
+Mousetrap.bind('enter', function (e) {
+    e.preventDefault();
     typingApp.toggleToApp();
     Mousetrap.unbind('enter');
 });
@@ -36,6 +37,7 @@ var typingApp = new Vue({
             this.start();
         },
         start: function () {
+            state.startTask('arithmetic');
             this.elapsedSeconds = 0;
             this.answer = '';
             var that = this;
@@ -47,6 +49,9 @@ var typingApp = new Vue({
             });
         },
         questionDone: function () {
+            state.finishTask({
+                correct: this.answer == this.question.answer,
+            });
             clearInterval(this.typingInterval);
             this.typingInterval = null;
             if (questions.length == 0) {

@@ -32,6 +32,7 @@ var typingApp = new Vue({
             this.start();
         },
         start: function () {
+            state.startTask('typing');
             var that = this;
             this.done = false;
             this.elapsedSeconds = 0;
@@ -63,6 +64,7 @@ var typingApp = new Vue({
             this.updateWordIdx(i);
         },
         paragraphDone: function () {
+            state.finishTask();
             clearInterval(this.typingInterval);
             this.typingInterval = null;
             this.done = true;
