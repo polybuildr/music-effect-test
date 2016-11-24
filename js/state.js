@@ -25,5 +25,6 @@ var state = {
         var logs = store.get(taskData.type + '-logs', []);
         logs.push(taskData);
         store.set(taskData.type + '-logs', logs);
+        store.set('exported', false);
     },
 }
