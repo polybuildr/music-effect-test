@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pick the odd one out test</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="page">
+            <div id="instructions" v-if="!showApp">
+                <h1>Pick the odd one out test</h1>
+                <ul>
+                    <li>You will be presented with an MCQ problem.</li>
+                    <li>You must pick an option correctly but as fast as possible.</li>
+                    <li>A timer will appear below the box to show how long you are taking.</li>
+                    <li>Once you click the OK button, the test will load and the timer will have begun. You can start answering immediately.</li>
+                </ul>
+                <div class="text-center large"><button v-on:click="toggleToApp()">Okay, start!</button></div>
+            </div>
+            <div id="app" v-if="showApp">
+                <form class="text-center question-form" v-on:submit.prevent="questionDone()">
+                    <div class="text-center question-text">Pick the odd one out</div>
+                    <div>
+                        <div class="inline-block text-left">
+                            <div v-for="option in question.options">
+                                <label>
+                                    <input type="radio" v-model="picked" :value="option">
+                                    {{option}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="timer" class="text-center">{{elapsedSeconds.toFixed(1)}} seconds</div>
+                </form>
+            </div>
+        </div>
+        <script src="bower_components/vue/dist/vue.js"></script>
+        <script src="js/choose.js"></script>
+    </body>
+</html>

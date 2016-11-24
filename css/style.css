@@ -34,6 +34,45 @@ button {
     color: #333;
 }
 
+input {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input[type=radio] {
+    height: .6em;
+    width: .6em;
+}
+
+.question-text {
+    margin-bottom: 1em;
+}
+
+.question-form input {
+    padding: .1em .2em;
+}
+
+.question-form label {
+    border-right: 5px solid transparent;
+}
+
+.question-form label,
+.question-form label input {
+    color: #555;
+    cursor: pointer;
+    padding-right: .3em;
+}
+
+.question-form label:hover {
+    color: #111;
+    border-right: 5px solid rgb(92, 130, 152);
+}
+
+.hint {
+    color: #666;
+    font-size: .7em;
+}
+
 textarea {
     font-family: inherit;
     font-size: inherit;
@@ -50,6 +89,14 @@ textarea {
 
 .text-center {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.inline-block {
+    display: inline-block;
 }
 
 button {
