@@ -13,6 +13,11 @@ var questions = [
     },
 ];
 
+Mousetrap.bind('enter', function () {
+    typingApp.toggleToApp();
+    Mousetrap.unbind('enter');
+});
+
 var typingApp = new Vue({
     el: '#page',
     data: {

@@ -2,6 +2,12 @@ var paragraphs = [
     "Mona Lisa is a 16th century portrait painted in oil by Leonardo da Vinci in Florence, Italy. It is studied, recognized, and copied so often that it is the most famous painting in the world. The painting is owned by the Government of France.",
 ];
 
+Mousetrap.bind('enter', function (e) {
+    e.preventDefault();
+    typingApp.toggleToApp();
+    Mousetrap.unbind('enter');
+});
+
 var typingApp = new Vue({
     el: '#page',
     data: {
