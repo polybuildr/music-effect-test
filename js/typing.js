@@ -1,6 +1,21 @@
-var paragraphs = [
-    "Mona Lisa is a 16th century portrait painted in oil by Leonardo da Vinci in Florence, Italy. It is studied, recognized, and copied so often that it is the most famous painting in the world. The painting is owned by the Government of France.",
-];
+if (state.getCurrentPhaseNum() == '1') {
+    var paragraphs = [
+        "Concurrent computing is a form of computing in which several computations are executed during overlapping time periods instead of sequentially. As a programming paradigm, concurrent computing is a form of modular programming.",
+        "Mona Lisa is a 16th century portrait painted in oil by Leonardo da Vinci in Florence, Italy. It is studied, recognized, and copied so often that it is the most famous painting in the world. The painting is owned by the Government of France.",
+    ];
+} else if (state.getCurrentPhaseNum() == '2') {
+    var paragraphs = [
+        "Behaviour-driven development (BDD) is a software development process that emerged from test-driven development (TDD). BDD attempts to combine the general techniques of TDD with ideas from object-oriented analysis and design.",
+        "The Statue of Liberty is a monument symbolising the United States. The statue is placed near the entrance to New York City harbour. It was given to the United States by the people of France, to represent the friendship between the two countries.",
+    ];
+} else if (state.getCurrentPhaseNum() == '3') {
+    var paragraphs = [
+        "Aspect-oriented programming (AOP) is a programming paradigm that aims to increase code modularity by allowing the separation of cross-cutting concerns. It does so by adding additional behaviour to existing code (an advice).",
+        "The Great Wall of China is an ancient wall located in China. The wall is made of cement, rocks and powdered dirt. It was built to protect the north of the empire of China from enemy attacks. It is the longest structure humans have ever built.",
+    ];
+}
+
+var paragraphIndex = 0;
 
 Mousetrap.bind('enter', function (e) {
     e.preventDefault();
@@ -64,13 +79,18 @@ var typingApp = new Vue({
             this.updateWordIdx(i);
         },
         paragraphDone: function () {
-            state.finishTask();
+            state.finishTask({
+                idx: paragraphIndex,
+            });
+            paragraphIndex++;
             clearInterval(this.typingInterval);
             this.typingInterval = null;
             this.done = true;
             if (paragraphs.length == 0) {
                 setTimeout(function () {
-                    alert("Congrats! You've successfully passed the test :D");
+                    alert('Test complete!');
+                    window.close();
+                    document.body.innerHTML = 'Please close this page.';
                 }, 1);
                 return;
             }
