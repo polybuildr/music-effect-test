@@ -16,6 +16,10 @@
                     <li>Once you click the button below (or press enter), the test will load and the timer will have begun. You can start typing immediately.</li>
                 </ul>
                 <div class="text-center large"><button v-on:click="toggleToApp()">Okay, start!</button></div>
+                <div class="screenshot-container">
+                    <h4>Example:</h4>
+                    <img src="typing.png" />
+                </div>
             </div>
             <div id="app" v-if="showApp">
                 <div id="paragraph" v-html="paragraphHtml"></div>

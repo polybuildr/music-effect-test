@@ -34,6 +34,16 @@ button {
     color: #333;
 }
 
+.screenshot-container {
+    text-align: center;
+    margin: 2em;
+}
+
+.screenshot-container img {
+    width: 600px;
+    box-shadow: 0 0 3px 5px #ccc;
+}
+
 input {
     font-family: inherit;
     font-size: inherit;
