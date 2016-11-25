@@ -21,12 +21,20 @@ if (state.getCurrentPhaseNum() == '1') {
             answerChoice: 3,
         },
         {
+            options: ['Orangutan', 'Lion', 'Giraffe', 'Rectangle'],
+            answerChoice: 3,
+        },
+        {
             options: ['C', 'Lemons', 'PHP', 'C#'],
             answerChoice: 1,
         },
         {
             options: ['Laptop', 'Unicorn', 'Smartphone', 'Desktop'],
             answerChoice: 1,
+        },
+        {
+            options: ['Square', 'Rectangle', 'Circle', 'Water'],
+            answerChoice: 3,
         },
         {
             options: ['Magenta', 'Cyan', 'Parachute', 'Indigo'],
@@ -48,6 +56,10 @@ if (state.getCurrentPhaseNum() == '1') {
             answerChoice: 3,
         },
         {
+            options: ['Square', 'Cheetah', 'Babboon', 'Cat'],
+            answerChoice: 0,
+        },
+        {
             options: ['Bash', 'Perl', 'Hostel', 'Javascript'],
             answerChoice: 2,
         },
@@ -62,6 +74,10 @@ if (state.getCurrentPhaseNum() == '1') {
         {
             options: ['Desktop', 'Dragon', 'Tablet', 'Laptop'],
             answerChoice: 1,
+        },
+        {
+            options: ['Juice', 'Rectangle', 'Circle', 'Triangle'],
+            answerChoice: 0,
         },
         {
             options: ['Emerald', 'Pink', 'Rocket', 'Brown'],
@@ -79,6 +95,10 @@ if (state.getCurrentPhaseNum() == '1') {
             answerChoice: 0,
         },
         {
+            options: ['Owl', 'Rat', 'Cylinder', 'Kangaroo'],
+            answerChoice: 2,
+        },
+        {
             options: ['C++', 'Python', 'Java', 'Clouds'],
             answerChoice: 3,
         },
@@ -89,6 +109,10 @@ if (state.getCurrentPhaseNum() == '1') {
         {
             options: ['PHP', 'Pune', 'Hyderabad', 'Indore'],
             answerChoice: 0,
+        },
+        {
+            options: ['Square', 'Pepsi', 'Circle', 'Triangle'],
+            answerChoice: 1,
         },
         {
             options: ['Chair', 'Fan', 'Bed', 'Scooter'],
