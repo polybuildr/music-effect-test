@@ -23,7 +23,7 @@
             </div>
             <div id="app" v-if="showApp">
                 <div id="paragraph" v-html="paragraphHtml"></div>
-                <textarea id="textarea" v-model="typedText" v-on:input="checkTypedTextState" v-bind:disabled="done"></textarea>
+                <textarea spellcheck="false" id="textarea" v-model="typedText" v-on:input="checkTypedTextState" v-bind:disabled="done"></textarea>
                 <div id="timer">{{elapsedSeconds.toFixed(1)}} seconds<span v-if="done">!</span></div>
                 <div v-if="showCountdownInterval">Next test in {{secondsLeftForNextParagraph}} seconds...</div>
             </div>
