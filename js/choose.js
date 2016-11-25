@@ -17,10 +17,6 @@ if (state.getCurrentPhaseNum() == '1') {
             answerChoice: 2,
         },
         {
-            options: ['Table', 'Chair', 'Bed', 'Car'],
-            answerChoice: 3,
-        },
-        {
             options: ['Orangutan', 'Lion', 'Giraffe', 'Rectangle'],
             answerChoice: 3,
         },
@@ -62,10 +58,6 @@ if (state.getCurrentPhaseNum() == '1') {
         {
             options: ['Bash', 'Perl', 'Hostel', 'Javascript'],
             answerChoice: 2,
-        },
-        {
-            options: ['Kolkata', 'Python', 'Mumbai', 'Chennai'],
-            answerChoice: 1,
         },
         {
             options: ['Cupboard', 'Table', 'Fan', 'Bike'],
@@ -117,10 +109,6 @@ if (state.getCurrentPhaseNum() == '1') {
         {
             options: ['Chair', 'Fan', 'Bed', 'Scooter'],
             answerChoice: 3,
-        },
-        {
-            options: ['Smartphone', 'Sphinx', 'MP3 Player', 'Laptop'],
-            answerChoice: 1,
         },
         {
             options: ['White', 'Lavendar', 'Candle', 'Magenta'],

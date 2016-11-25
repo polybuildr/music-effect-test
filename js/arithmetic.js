@@ -13,10 +13,6 @@ if (state.getCurrentPhaseNum() == '1') {
             answer: '16',
         },
         {
-            text: '29 - 5',
-            answer: '24',
-        },
-        {
             text: '12 x 3',
             answer: '36',
         },
@@ -27,10 +23,6 @@ if (state.getCurrentPhaseNum() == '1') {
         {
             text: '4 x 8',
             answer: '32',
-        },
-        {
-            text: '22 + 33',
-            answer: '55',
         },
         {
             text: '17 x 2',
@@ -68,14 +60,6 @@ if (state.getCurrentPhaseNum() == '1') {
             answer: '24',
         },
         {
-            text: '8 x 7',
-            answer: '56',
-        },
-        {
-            text: '13 x 2',
-            answer: '26',
-        },
-        {
             text: '3 x 7',
             answer: '21',
         },
@@ -103,10 +87,6 @@ if (state.getCurrentPhaseNum() == '1') {
 } else if (state.getCurrentPhaseNum() == '3') {
     var questions = [
         {
-            text: '6 + 7',
-            answer: '13',
-        },
-        {
             text: '12 + 7',
             answer: '19',
         },
@@ -133,10 +113,6 @@ if (state.getCurrentPhaseNum() == '1') {
         {
             text: '22 + 66',
             answer: '88',
-        },
-        {
-            text: '18 x 2',
-            answer: '36',
         },
         {
             text: '5 x 6',
