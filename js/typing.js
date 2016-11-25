@@ -28,7 +28,8 @@ var typingApp = new Vue({
     data: {
         showApp: false,
         paragraph: '',
-        wordIdx: 0,
+        tokenizedParagraph: [],
+        tokenIndex: 0,
         typedText: '',
         elapsedSeconds: 0,
         typingInterval: null,
@@ -43,6 +44,7 @@ var typingApp = new Vue({
         },
         nextParagraph: function() {
             this.paragraph = paragraphs.pop();
+            this.tokenizedParagraph = this.tokenize(this.paragraph);
             this.typedText = '';
             this.start();
         },
@@ -51,7 +53,7 @@ var typingApp = new Vue({
             var that = this;
             this.done = false;
             this.elapsedSeconds = 0;
-            this.wordIdx = 0;
+            this.tokenIndex = 0;
             this.typingInterval = setInterval(function () {
                 that.elapsedSeconds += 0.1;
             }, 100);
@@ -59,24 +61,24 @@ var typingApp = new Vue({
                 document.getElementById('textarea').focus();
             });
         },
-        updateWordIdx: function (i) {
-            if (i <= this.paragraph.split(' ').length) {
-                this.wordIdx = i;
-                if (this.wordIdx == this.paragraph.split(' ').length) {
+        updateTokenIndex: function (i) {
+            if (i <= this.tokenizedParagraph.length) {
+                this.tokenIndex = i;
+                if (this.tokenIndex == this.tokenizedParagraph.length) {
                     this.paragraphDone();
                 }
             }
         },
         checkTypedTextState: function () {
-            var typedWords = this.typedText.split(' ');
-            var words = this.paragraph.split(' ');
+            var typedWords = this.tokenize(this.typedText);
+            var tokens = this.tokenizedParagraph;
             var i = 0;
-            for (; i < words.length; ++i) {
-                if (typedWords[i] != words[i]) {
+            for (; i < tokens.length; ++i) {
+                if (typedWords[i] != tokens[i]) {
                     break;
                 }
             }
-            this.updateWordIdx(i);
+            this.updateTokenIndex(i);
         },
         paragraphDone: function () {
             state.finishTask({
@@ -105,18 +107,24 @@ var typingApp = new Vue({
                 }
             }, 1000);
         },
+        tokenize: function (text) {
+            return text.split(/([ .,\/#!$%\^&\*;:{}=\-_`~()])/g);
+        },
+        untokenize: function (tokens) {
+            return tokens.join('');
+        }
     },
     computed: {
         paragraphHtml: function () {
             console.log('asasd');
-            var words = this.paragraph.split(' ');
-            for (var i = 0; i < this.wordIdx; ++i) {
-                words[i] = '<span style="color:green;">' + words[i] + '</span>'
+            var tokens = this.tokenize(this.paragraph);
+            for (var i = 0; i < this.tokenIndex; ++i) {
+                tokens[i] = '<span style="color:green;">' + tokens[i] + '</span>'
             }
-            if (this.wordIdx < words.length) {
-                words[this.wordIdx] = '<span style="color:blue;">' + words[this.wordIdx] + '</span>';
+            if (this.tokenIndex < tokens.length) {
+                tokens[this.tokenIndex] = '<span style="color:blue;">' + tokens[this.tokenIndex] + '</span>';
             }
-            return words.join(' ');
+            return this.untokenize(tokens);
         }
     }
 })
