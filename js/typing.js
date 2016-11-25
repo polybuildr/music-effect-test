@@ -44,7 +44,6 @@ var typingApp = new Vue({
         },
         nextParagraph: function() {
             this.paragraph = paragraphs.pop();
-            this.paragraph = paragraphs.pop();
             this.tokenizedParagraph = this.tokenize(this.paragraph);
             this.typedText = '';
             this.start();
