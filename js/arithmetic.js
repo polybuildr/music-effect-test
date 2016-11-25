@@ -32,6 +32,22 @@ if (state.getCurrentPhaseNum() == '1') {
             text: '22 + 33',
             answer: '55',
         },
+        {
+            text: '17 x 2',
+            answer: '34',
+        },
+        {
+            text: '5 x 8',
+            answer: '40',
+        },
+        {
+            text: '12 + 28',
+            answer: '40',
+        },
+        {
+            text: '48 - 5',
+            answer: '43',
+        },
     ].reverse();
 } else if (state.getCurrentPhaseNum() == '2') {
     var questions = [
@@ -67,6 +83,22 @@ if (state.getCurrentPhaseNum() == '1') {
             text: '33 + 44',
             answer: '77',
         },
+        {
+            text: '16 x 2',
+            answer: '32',
+        },
+        {
+            text: '5 x 9',
+            answer: '45',
+        },
+        {
+            text: '13 + 37',
+            answer: '50',
+        },
+        {
+            text: '56 - 4',
+            answer: '52',
+        },
     ].reverse();
 } else if (state.getCurrentPhaseNum() == '3') {
     var questions = [
@@ -101,6 +133,22 @@ if (state.getCurrentPhaseNum() == '1') {
         {
             text: '22 + 66',
             answer: '88',
+        },
+        {
+            text: '18 x 2',
+            answer: '36',
+        },
+        {
+            text: '5 x 6',
+            answer: '30',
+        },
+        {
+            text: '23 + 47',
+            answer: '70',
+        },
+        {
+            text: '68 - 7',
+            answer: '61',
         },
     ].reverse();
 }

@@ -13,12 +13,16 @@ if (state.getCurrentPhaseNum() == '1') {
             answerChoice: 3
         },
         {
-            options: ['Delhi', 'Javascript', 'Hyderabad', 'Mumbai'],
-            answerChoice: 1,
+            options: ['Delhi', 'Hyderabad', 'Javascript', 'Mumbai'],
+            answerChoice: 2,
         },
         {
             options: ['Table', 'Chair', 'Bed', 'Car'],
             answerChoice: 3,
+        },
+        {
+            options: ['C', 'Lemons', 'PHP', 'C#'],
+            answerChoice: 1,
         },
         {
             options: ['Laptop', 'Unicorn', 'Smartphone', 'Desktop'],
@@ -42,6 +46,10 @@ if (state.getCurrentPhaseNum() == '1') {
         {
             options: ['Black', 'Purple', 'Blue', 'Tablet'],
             answerChoice: 3,
+        },
+        {
+            options: ['Bash', 'Perl', 'Hostel', 'Javascript'],
+            answerChoice: 2,
         },
         {
             options: ['Kolkata', 'Python', 'Mumbai', 'Chennai'],
@@ -71,12 +79,16 @@ if (state.getCurrentPhaseNum() == '1') {
             answerChoice: 0,
         },
         {
+            options: ['C++', 'Python', 'Java', 'Clouds'],
+            answerChoice: 3,
+        },
+        {
             options: ['Grey', 'Maroon', 'White', 'Speakers'],
             answerChoice: 3,
         },
         {
-            options: ['Pune', 'PHP', 'Hyderabad', 'Indore'],
-            answerChoice: 1,
+            options: ['PHP', 'Pune', 'Hyderabad', 'Indore'],
+            answerChoice: 0,
         },
         {
             options: ['Chair', 'Fan', 'Bed', 'Scooter'],
@@ -92,6 +104,8 @@ if (state.getCurrentPhaseNum() == '1') {
         },
     ].reverse();
 }
+
+var questionIdx = 0;
 
 Mousetrap.bind('enter', function (e) {
     e.preventDefault();
@@ -127,8 +141,10 @@ var typingApp = new Vue({
         questionDone: function () {
             var question = this.question;
             state.finishTask({
+                idx: questionIdx,
                 correct: this.picked == question.options[question.answerChoice]
             });
+            questionIdx++;
             clearInterval(this.typingInterval);
             this.typingInterval = null;
             if (questions.length == 0) {
