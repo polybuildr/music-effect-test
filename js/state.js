@@ -33,6 +33,9 @@ var state = {
             return v.toString(16);
         });
         taskData.phase = state.getCurrentPhaseNum();
+        if (taskData.phase == '2') {
+            taskData.phase = '4';
+        }
         var logs = store.get(taskData.type + '-logs', []);
         logs.push(taskData);
         store.set(taskData.type + '-logs', logs);
