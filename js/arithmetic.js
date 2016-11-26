@@ -2,7 +2,7 @@ if (state.getCurrentPhaseNum() == '1') {
     var questions = [
         {
             text: '5 + 7',
-            answer: '13',
+            answer: '12',
         },
         {
             text: '12 + 5',
@@ -53,7 +53,7 @@ if (state.getCurrentPhaseNum() == '1') {
         },
         {
             text: '24 - 6',
-            answer: '17',
+            answer: '18',
         },
         {
             text: '27 - 3',
